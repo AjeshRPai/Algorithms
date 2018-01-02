@@ -1,5 +1,11 @@
 package GraphAlgorithms;
 
+/**
+ * @author ajeshpai
+ * @link https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+**/
+
+
 public class DetectCycle {
     
     static void isCyclic(int vertex,Graph graph,boolean[] isVisited){
