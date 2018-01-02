@@ -2,7 +2,6 @@ package GraphAlgorithms;
 
 public class DepthFirstSearch {
     
-    
     static void DFSUtil(int vertex,boolean visited[],Graph graph){
         
         visited[vertex]=true;
@@ -20,9 +19,6 @@ public class DepthFirstSearch {
         boolean[] visited=new boolean[graph.getVertices()];
         DFSUtil(vertex,visited,graph);
     }
-    
-    
-    
     
     public static void main(String[] args){
         Graph g = new Graph(4); //Graph with 4 edges
