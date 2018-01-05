@@ -1,6 +1,6 @@
 package LinkedListAlgorithms;
 
-public class LinkedList {
+class LinkedList {
     
     Node head;
     
@@ -14,8 +14,7 @@ public class LinkedList {
         }
     }
     
-    public void push(int new_data)
-    {
+    void push(int new_data) {
         /* 1 & 2: Allocate the Node &
                   Put in the data*/
         Node new_node = new Node(new_data);
@@ -25,6 +24,13 @@ public class LinkedList {
  
         /* 4. Move the head to point to new Node */
         head = new_node;
+    }
+    
+    void printList(Node node) {
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
     }
     
 }

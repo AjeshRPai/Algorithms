@@ -6,11 +6,11 @@ public class MiddleElement {
         LinkedList llist = new LinkedList();
         for (int i=5; i>0; --i) {
             llist.push(i);
-            printMiddle(llist);
         }
+        printMiddle(llist);
     }
     
-    static void printMiddle(LinkedList list) {
+    private static void printMiddle(LinkedList list) {
         LinkedList.Node slow_ptr = list.head;
         LinkedList.Node fast_ptr = list.head;
         if (list.head != null)
