@@ -6,7 +6,9 @@ import java.util.Stack;
 public class TopologicalSort {
     
     public static void main(String[] args) {
+        
         Graph graph = new Graph(6);
+        
         graph.addEdge(5, 2);
         graph.addEdge(5, 0);
         graph.addEdge(4, 0);
@@ -50,7 +52,7 @@ public class TopologicalSort {
         System.out.println("Recursively looking at the Adjacent Vertex of "+vertex);
          
         visited[vertex]=true;
-    
+        
         Integer i;
     
         // Recur for all the vertices adjacent to this
