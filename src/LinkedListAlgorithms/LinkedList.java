@@ -11,6 +11,12 @@ package LinkedListAlgorithms;
         Node(int data){
             this.data=data;
             next=null;
+            
+        }
+    
+        @Override
+        public String toString() {
+            return "Value "+data;
         }
     }
     
