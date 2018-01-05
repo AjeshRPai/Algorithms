@@ -2,6 +2,7 @@ package GraphAlgorithms;
 
 import java.util.Iterator;
 import java.util.Stack;
+import static java.lang.System.*;
 
 public class TopologicalSort {
     
@@ -16,7 +17,7 @@ public class TopologicalSort {
         graph.addEdge(2, 3);
         graph.addEdge(3, 1);
     
-        System.out.println("Following is a Topological " +
+        out.println("Following is a Topological " +
                 "sort of the given graph");
         sortTopologically(graph);
     }
@@ -34,16 +35,16 @@ public class TopologicalSort {
         
         //Calling for the Adjacent vertices of a vertex
         for(int i=0;i<graph.getVertices();i++) {
-            System.out.println("The vertex is "+i);
+            out.println("The vertex is "+i);
             if (!visited[i]) {
                 topologicalSortUtil(graph, i, stack, visited);
             }else {
-                System.out.print(+i+" has been visited so skipping it");
+                out.print(+i+" has been visited so skipping it");
             }
         }
         
         while (!stack.isEmpty())
-            System.out.println(stack.pop()+" ");
+            out.println(stack.pop()+" ");
         
     
     }
@@ -59,7 +60,7 @@ public class TopologicalSort {
         // vertex
         for (Integer integer : (Iterable<Integer>) graph.getAdj()[vertex]) {
             i = integer;
-            System.out.println("The vertex is "+i);
+            out.println("The vertex is "+i);
             if (!visited[i]) {
                 System.out.println("The vertex that hasnt visited is " + i);
                 topologicalSortUtil(graph, i, stack, visited);
@@ -67,7 +68,7 @@ public class TopologicalSort {
         }
     
         // Push current vertex to stack which stores result
-        System.out.println("Pushing the vertex =" +vertex+" since we have visited all its neighbours");
+        out.println("Pushing the vertex =" +vertex+" since we have visited all its neighbours");
         stack.push(vertex);
         
     }

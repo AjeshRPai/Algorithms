@@ -1,6 +1,6 @@
 package LinkedListAlgorithms;
 
-class LinkedList {
+ class LinkedList {
     
     Node head;
     
