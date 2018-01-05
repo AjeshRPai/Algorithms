@@ -15,6 +15,8 @@ package LinkedListAlgorithms;
     }
     
     void push(int new_data) {
+        //This will add the item to the first of the List
+        
         /* 1 & 2: Allocate the Node &
                   Put in the data*/
         Node new_node = new Node(new_data);
@@ -26,10 +28,31 @@ package LinkedListAlgorithms;
         head = new_node;
     }
     
-    void printList(Node node) {
+    void printList() {
+        Node node=head;
         while (node != null) {
             System.out.print(node.data + " ");
             node = node.next;
+        }
+    }
+    
+    void add(int new_data){
+        
+        //This will add the item to the end of the Linked List
+    
+        Node new_node = new Node(new_data);
+        
+        if(head!=null) {
+            Node pointer = head;
+    
+            while (pointer.next != null) {
+                pointer = pointer.next;
+            }
+    
+            pointer.next = new_node;
+    
+        }else {
+            head=new Node(new_data);
         }
     }
     
