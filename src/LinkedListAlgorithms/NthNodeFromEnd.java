@@ -9,6 +9,7 @@ public class NthNodeFromEnd {
         printNthNode(llist.head, 5);
     }
     
+    //This is a recursive code which is less optimal
     private static int printNthNode(LinkedList.Node head, int i) {
         if (head == null)
             return 0;
