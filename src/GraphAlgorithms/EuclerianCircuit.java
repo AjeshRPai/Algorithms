@@ -41,7 +41,13 @@ public class EuclerianCircuit {
     
         String[] letters= {"abc", "efg", "cde", "ghi", "ija"};
         
+        
+        HashMap<Character,Integer> characterIntegerHashmap=new HashMap<>(letters.length);
+        
+        
+        
     
+        
         LetterGraph g = new LetterGraph(letters.length,letters); //Graph with 4 edges
         HashMap<Character,Boolean> map = new HashMap<>(letters.length);
         
