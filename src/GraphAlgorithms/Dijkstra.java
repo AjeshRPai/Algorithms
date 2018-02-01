@@ -1,5 +1,7 @@
 package GraphAlgorithms;
 
+import java.util.Arrays;
+
 public class Dijkstra {
     static final int V=4;
     
@@ -12,8 +14,7 @@ public class Dijkstra {
         dijkstra(graph, 0);
     }
     
-    static int minDistance(int dist[], Boolean sptSet[])
-    {
+    static int minDistance(int dist[], Boolean sptSet[]) {
         // Initialize min value
         int min = Integer.MAX_VALUE, min_index=-1;
         
@@ -33,18 +34,15 @@ public class Dijkstra {
         // sptSet[i] will true if vertex i is included in shortest
         // path tree or shortest distance from src to i is finalized
         Boolean sptSet[] = new Boolean[V];
-        
-        // Initialize all distances as INFINITE and stpSet[] as false
-        for (int i = 0; i < V; i++)
-        {
-            dist[i] = Integer.MAX_VALUE;
-            sptSet[i] = false;
-        }
+    
+        Arrays.fill(dist,Integer.MAX_VALUE);
+        Arrays.fill(sptSet,false);
         
         // Distance of source vertex from itself is always 0
         dist[src] = 0;
         
         // Find shortest path for all vertices
+        //IF there are 4 vertices then array size is 3 X 3
         for (int count = 0; count < V-1; count++) {
             // Pick the minimum distance vertex from the set of vertices
             // not yet processed. u is always equal to src in first
