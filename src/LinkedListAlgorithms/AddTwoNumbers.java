@@ -10,8 +10,7 @@ public class AddTwoNumbers {
         llist.push(1);
         llist.push(8);
         llist.push(3);
-    
-    
+        
         LinkedList llist2 = new LinkedList();
         llist2.push(2);
         llist2.push(1);
@@ -23,15 +22,10 @@ public class AddTwoNumbers {
         result.printList();
     }
     
-    
-    
     private static void addLinkedList(LinkedList llist, LinkedList llist2) {
         LinkedList.Node current = llist.head;
         LinkedList.Node current2= llist2.head;
-        
         addLinkedListUtil(current,current2);
-        
-        
     }
     /*
         3-8-1
