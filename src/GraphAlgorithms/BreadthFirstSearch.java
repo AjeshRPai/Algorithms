@@ -1,51 +1,66 @@
 package GraphAlgorithms;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
+import static java.lang.System.out;
+import java.util.Scanner;
 
 
 public class BreadthFirstSearch {
     
-    static void BFS(int s,Graph graph) {
-        // Mark all the vertices as not visited(By default
-        // set as false)
-        boolean visited[] = new boolean[graph.getVertices()];
-        
-        // Create a queue for BFS
-        LinkedList<Integer> queue = new LinkedList<Integer>();
-        
-        // Mark the current node as visited and enqueue it
-        visited[s]=true;
-        queue.add(s);
-        
-        while (queue.size() != 0)
-        {
-            // Dequeue a vertex from queue and print it
-            s = queue.poll();
-            System.out.print(s+" ");
-            // Get all adjacent vertices of the dequeued vertex s
-            // If a adjacent has not been visited, then mark it
-            // visited and enqueue it
-            for (Integer n : (Iterable<Integer>) graph.getAdj()[s]) {
-                if (!visited[n]) {
-                    visited[n] = true;
-                    queue.add(n);
-                }
-            }
+    
+    static int[] bfs(int n, int m, int[][] edges, int s) {
+        // Complete this function
+        boolean visited[] = new boolean[n];
+        int[] distance= new int[n+1];
+        Arrays.fill(distance,-1);
+        for(int i=0;i<m;i++){
+            out.println("edges are starting="+edges[i][0]+" ending="+edges[i][1]);
+            if(s==edges[i][0])
+                distance[edges[i][1]]=6;
+            else
+                distance[edges[i][1]]=(distance[edges[i][0]]+6);
         }
+        return printformat(distance,s);
     }
     
-    public static void main(String args[]) {
-        Graph g = new Graph(4); //Graph with 4 edges
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 3);
-        g.addEdge(3, 3);
-        System.out.println("Following is Breadth First Traversal "+
-                "(starting from vertex 2)");
-        BFS(2,g);
+    
+    static int[] printformat(int[] distances,int source){
+        int[] result_format= new int[distances.length-2];
+        int res_pointer=0;
+        for(int i=1;i<distances.length;i++){
+            System.out.println("res_pointer "+res_pointer+" distance ="+distances[i]+" i="+i);
+            if(i!=source){
+                result_format[res_pointer]=distances[i];
+                res_pointer++;
+            }
+        }
+        return result_format;
     }
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            int n = in.nextInt();
+            int m = in.nextInt();
+            int[][] edges = new int[m][2];
+            for(int edges_i = 0; edges_i < m; edges_i++){
+                for(int edges_j = 0; edges_j < 2; edges_j++){
+                    edges[edges_i][edges_j] = in.nextInt();
+                }
+            }
+            int s = in.nextInt();
+            int[] result = bfs(n, m, edges, s);
+            for (int i = 0; i < result.length; i++) {
+                System.out.print(result[i] + (i != result.length - 1 ? " " : ""));
+            }
+            System.out.println("");
+        }
+        in.close();
+    }
+    
+   
 }
 
