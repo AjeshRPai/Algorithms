@@ -12,7 +12,7 @@ public class MergeTwoLinkedList {
         llist2.push(20);
         llist2.push(18);
         llist2.push(16);
-        llist2.push(12);
+        llist2.push(1);
         
         
         mergeList(llist,llist2);

@@ -17,7 +17,7 @@ public class Rotate {
         llist.add(8);
         
         
-        LinkedList rotated=rotate(llist,4);
+        LinkedList rotated=rotate(llist,3);
         rotated.printList();
     }
     

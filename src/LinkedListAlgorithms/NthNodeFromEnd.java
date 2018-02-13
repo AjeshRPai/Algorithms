@@ -3,10 +3,14 @@ package LinkedListAlgorithms;
 public class NthNodeFromEnd {
     public static void main(String[] args) {
         LinkedList llist = new LinkedList();
-        for (int i = 8; i > 0; --i) {
-            llist.push(i);
-        }
-        printNthNode(llist.head, 5);
+        llist.push(1);
+        llist.push(5);
+        llist.push(6);
+        llist.push(12);
+        llist.push(11);
+    
+        llist.push(11);
+        printNthNode(llist.head, 0);
     }
     
     //This is a recursive code which is less optimal

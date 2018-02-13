@@ -34,6 +34,8 @@ package LinkedListAlgorithms;
         head = new_node;
     }
     
+    
+    
     void printList() {
         Node node=head;
         while (node != null) {
