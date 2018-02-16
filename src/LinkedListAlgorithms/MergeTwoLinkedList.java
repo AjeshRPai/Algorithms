@@ -7,13 +7,11 @@ public class MergeTwoLinkedList {
         llist.push(17);
         llist.push(15);
         
-        
         LinkedList llist2 = new LinkedList();
         llist2.push(20);
         llist2.push(18);
         llist2.push(16);
         llist2.push(1);
-        
         
         mergeList(llist,llist2);
     }
@@ -21,9 +19,7 @@ public class MergeTwoLinkedList {
     private static void mergeList(LinkedList llist, LinkedList llist2) {
         LinkedList.Node head1=llist.head;
         LinkedList.Node head2=llist2.head;
-        
         LinkedList result=new LinkedList();
-        
         
         while (head1!=null || head2!=null){
             if(head1==null){
