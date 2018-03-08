@@ -27,7 +27,7 @@ class LinkedList {
                   Put in the data*/
         Node new_node = new Node(new_data);
  
-        /* 3. Make next of new TreeNode as head */
+        /* 3. Make right of new TreeNode as head */
         new_node.next = head;
  
         /* 4. Move the head to point to new TreeNode */
