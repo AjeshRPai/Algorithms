@@ -3,7 +3,9 @@ package DynamicProgramming;
 
 /**
  *
- * [Link]https://www.geeksforgeeks.org/count-ways-reach-nth-stair/
+ * @see <a href="https://www.geeksforgeeks.org/count-ways-reach-nth-stair">Question</a>
+ *
+ *
  *
  * There are n stairs, a person standing at the bottom wants to reach the top.
  * The person can climb either 1 stair or 2 stairs at a time. Count the number of ways, the person can reach the top.
@@ -33,7 +35,7 @@ public class NumberOfWays {
     }
     
     public static void main(String[] args) {
-        int s = 6, m = 2;
+        int s = 6, m = 3;
         System.out.println("Nuber of ways = " + countWays(s, m));
     }
     
