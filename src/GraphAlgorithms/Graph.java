@@ -42,11 +42,9 @@ public class Graph {
 
         for (int i = 0; i <vertex ; i++) {
             if(list[i].size()>0) {
-                System.out.print("Vertex " + i + " is connected to: ");
-                for (int j = 0; j < list[i].size(); j++) {
-                    System.out.print(list[i].get(j) + " ");
+                for (int j = 0; j < list[i].size();  j++) {
+                    System.out.println(i+"------"+list[i].get(j) + " ");
                 }
-                System.out.println();
             }
         }
     }
