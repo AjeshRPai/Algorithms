@@ -3,7 +3,7 @@ package BinaryTreeAlgorithms;
 class BinaryTree{
     
     static class TreeNode{
-        int key;
+        Integer key;
         TreeNode left, right;
         
         TreeNode(int item) {

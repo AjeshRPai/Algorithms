@@ -8,6 +8,22 @@ public class FindTheSumOfNodes {
     static int total=0;
 
     public static void main(String[] args) {
+        findSum(getDummyRoot());
+        System.out.println("total = " + total);
+    }
+
+    static void findSum(Leaf leaf) {
+        if(leaf.value == null)
+            return;
+        total += leaf.value;
+        if(leaf.leafList==null)
+            return;
+        for (Leaf leaf1 : leaf.leafList) {
+            findSum(leaf1);
+        }
+    }
+
+    public static Leaf getDummyRoot() {
         Leaf root = new Leaf(0,null);
         Leaf leaf1 = new Leaf(1,null);
         Leaf leaf2 = new Leaf(2,null);
@@ -31,20 +47,6 @@ public class FindTheSumOfNodes {
         rootChildren.add(leaf7);
 
         root.leafList = rootChildren;
-
-        findSum(root);
-
-        System.out.println("total = " + total);
-    }
-
-    static void findSum(Leaf leaf) {
-        if(leaf.value == null)
-            return;
-        total += leaf.value;
-        if(leaf.leafList==null)
-            return;
-        for (Leaf leaf1 : leaf.leafList) {
-            findSum(leaf1);
-        }
+        return root;
     }
 }
