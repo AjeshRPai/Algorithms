@@ -4,7 +4,7 @@ import java.util.*;
 
 // Assumptions
 // Non Empty String
-// Non Negative Integer meaning can be zero
+// Ket can be Non Negative Integer meaning can be zero
 
 // Scenario Missed
 // If the Key is Very large the index has to be calibrated multiple times
